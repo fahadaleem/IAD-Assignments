@@ -1,0 +1,30 @@
+@media screen and (max-width: 768px) {
+  .top-nav {
+    display: none;
+  }
+  .fixed-top {
+    top: 0 !important;
+  }
+  .hero-section {
+    background-position: left;
+  }
+  .hero-section div {
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0;
+  }
+  .intro-section h2::before {
+    top: 550px;
+  }
+  .portfolio-section .container .row div {
+    margin: 0 40px;
+  }
+  .portfolio-title
+  {
+      top: 3.8rem;
+  }
+  .get-our-service
+  {
+      text-align: center;
+  }
+}

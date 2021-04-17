@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.3.0/math.js" integrity="sha512-bd8Oth+p1rTn+/iUFHsSozuYn7JpmH59vMWe6L+M3huScB/SMTXWkQoME3Ytk0sbGJ40VGp2mO2b8K8FNrewfQ==" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        body{
+            background-color: #264653;
+            color:#f4a261
+        }
+        #info{
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        #matrix-form
+        {
+            background-color:#f4a261;
+            color:#264653;
+            text-align: center;
+            width: 70%;
+            padding:10px;
+            margin: 0 auto;
+        }
+        #matrix-form h3{
+            font-size: 2.5rem;
+        }
+        #matrix-form label{
+            font-size: 1.6rem;
+        }
+        #nom{
+            width: 180px;
+            padding: 5px 20px;
+        }
+        #submit-btn
+        {
+            padding:5px 25px;
+            font-size: 1.2rem;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="info">
+        <h1>IAD Assignment - 2</h1>
+        <h2>Matrices Calculator</h2>
+        <h2>Muhammad Fahad Aleem</h2>
+        <h2>EP-1849052</h2>
+    </div>
+
+    <div id="matrix-form">
+        <h3>Matrices Calculator</h3>
+        <br>
+        <label for="nom">Enter Number of matrices: </label><input type="number" min="1" max="2" name="" id="nom">
+        <button onclick="numOfMat()" id="submit-btn">Enter</button>
+        <br>
+        <div>
+            <p id="mat"></p>
+            <p id="rowcol"></p>
+            <div id="vals"></div>
+            <div id="matopr"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

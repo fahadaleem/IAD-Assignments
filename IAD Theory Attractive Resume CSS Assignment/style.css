@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+body {
+  background-color: #243142;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 190px;
+}
+
+.resume-sections {
+  width: 33%;
+  padding: 50px 30px;
+}
+
+.contact {
+  color: white;
+  margin: 60px 0;
+}
+
+.contact .heading {
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+.contact p {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.contact p a {
+  color: white;
+  text-decoration: none;
+}
+
+.skills,
+.education {
+  margin: 30px 0;
+}
+
+.skills .heading,
+.education .heading, #experience .heading, #certifications .heading {
+  color: white;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.skills .skill-set {
+  display: flex;
+  align-items: center;
+  color: white;
+  width: 65%;
+  justify-content: space-between;
+}
+
+.skills .skill-set .progress {
+  display: flex;
+  margin-left: 20px;
+}
+
+.skills .skill-set .dots {
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border-radius: 40px;
+  margin: 5px;
+}
+
+#html.skill-set .progress .dots:nth-last-child(-n + 1) {
+  background-color: gray !important;
+}
+
+#css.skill-set .progress .dots:nth-last-child(-n + 1) {
+  background-color: gray !important;
+}
+
+#bootstrap.skill-set .progress .dots:nth-last-child(-n + 2) {
+  background-color: gray !important;
+}
+#javascript.skill-set .progress .dots:nth-last-child(-n + 1) {
+  background-color: gray !important;
+}
+
+#es6.skill-set .progress .dots:nth-last-child(-n + 3) {
+  background-color: gray !important;
+}
+#react.skill-set .progress .dots:nth-last-child(-n + 2) {
+  background-color: gray !important;
+}
+#material-ui.skill-set .progress .dots:nth-last-child(-n + 1) {
+  background-color: gray !important;
+}
+#firebase.skill-set .progress .dots:nth-last-child(-n + 1) {
+  background-color: gray !important;
+}
+
+.time-span {
+  font-weight: bold;
+}
+
+.education #university p {
+  color: white;
+  margin: 10px 0;
+}
+
+#intermediate {
+  margin: 20px 0;
+  color: white;
+}
+
+#intermediate p {
+  color: white;
+  margin: 10px 0;
+}
+
+#second-div {
+  background-color: white;
+  padding: 0 !important;
+  width: 25%;
+}
+
+#avatar {
+  text-align: center;
+  margin-top: -160px;
+}
+
+#user-photo {
+  width: 100%;
+  border-radius: 50%;
+  padding: 20px;
+  background-color: white;
+}
+
+#name {
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+#data {
+  padding: 10px !important;
+}
+
+#designation,
+#project-div {
+  background-color: #243142;
+  text-align: center;
+  padding: 10px 20px;
+  font-weight: bold;
+  margin: 10px 15px;
+  color: white;
+}
+
+#objective {
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.info {
+  margin: 20px 0;
+}
+.projects {
+  margin: 20px 10px;
+}
+
+#projects-list
+{
+  margin: 20px 0;
+}
+
+#projects-list .project-title
+{
+  font-size: 14px;
+  padding: 2px 15px;
+
+}
+
+#third-div
+{
+  margin: 40px 0;
+}
+
+#intern p
+{
+  color: white;
+}
+
+#intern .time-span
+{
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#certifications
+{
+  margin: 60px 0;
+}
+#certificates p
+{
+  color: white;
+  margin: 10px 0;
+}

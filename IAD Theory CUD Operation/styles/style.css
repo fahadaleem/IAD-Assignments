@@ -1,6 +1,12 @@
 * {
   font-family: "Arvo", serif;
 }
+
+body, html{
+    scroll-behavior: smooth;
+}
+
+
 .navbar {
   background-color: #233e8b !important;
   height: 80px;
@@ -54,6 +60,16 @@ button.btn-primary {
 
 
 
+.form-labels{
+    font-size: 1.2rem;
+}
+
+.input-fields{
+    border:2px solid #233e8b !important;
+}
+
+
+
 
 @media screen and (max-width:420px) {
     .header-content{
@@ -63,6 +79,9 @@ button.btn-primary {
     }
     .table{
         width: 1000px !important;
+    }
+    .w-50{
+        width:"100% !important"
     }
 
 }

@@ -1,0 +1,68 @@
+* {
+  font-family: "Arvo", serif;
+}
+.navbar {
+  background-color: #233e8b !important;
+  height: 80px;
+}
+
+.navbar .navbar-brand {
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: "Arvo", serif;
+}
+
+.navbar-collapse{
+    background-color: #233e8b;
+    z-index: 20;
+}
+
+.navbar-nav > li > a {
+  color: #ffffff !important;
+  font-size: 18px;
+  margin: 0 15px;
+  padding: 10px 0 !important;
+  font-family: "Arvo", serif;
+}
+
+.hero-area {
+  align-items: center;
+}
+
+.header-content {
+  font-size: 5rem;
+}
+
+.header-content #contact-text {
+  color: #233e8b;
+}
+
+button.btn-primary {
+  background-color: #233e8b;
+  border-color: #233e8b;
+}
+
+#header-image {
+  width: 100%;
+}
+
+.table thead {
+  background-color: #233e8b;
+  color: #ffffff;
+}
+
+
+
+
+@media screen and (max-width:420px) {
+    .header-content{
+        font-size: 2.6rem;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .table{
+        width: 1000px !important;
+    }
+
+}

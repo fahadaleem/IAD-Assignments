@@ -67,7 +67,7 @@ const handleUpdateContact = () => {
   const id = submitFormBtn.getAttribute("id");
   const getId = parseInt(id.split("-")[1]);
   const contactDetails = handleTakeInputs(getId);
-  const indexNumb = contacts.findIndex(elem=>elem.id === getId);
+  const indexNumb = contacts.findIndex((elem) => elem.id === getId);
   contacts.splice(indexNumb, 1, contactDetails);
   localStorage.setItem("contacts", JSON.stringify(contacts));
   handleRenderContactDetails();
@@ -98,7 +98,7 @@ const handleTakeInputs = (contactId) => {
 // function to submit data
 const handleSubmit = () => {
   const contactDetails = handleTakeInputs();
-  console.log("submit")
+  console.log("submit");
 
   if (contactDetails) {
     contacts = [...contacts, contactDetails];
@@ -172,8 +172,7 @@ const init = () => {
   handleRenderContactDetails();
   addNewContactBtn.addEventListener("click", handleDisplayContactForm);
   submitFormBtn.addEventListener("click", () => {
-    if(!isEdit)
-    handleSubmit();
+    if (!isEdit) handleSubmit();
     if (isEdit) {
       handleUpdateContact();
     }

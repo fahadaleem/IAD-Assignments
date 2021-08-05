@@ -1,0 +1,66 @@
+.paragraph{
+    background-color: aqua;
+    color: blue;
+}
+p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+  }
+
+  p::first-letter {
+    color: #ff0000;
+    font-size: xx-large;
+  }
+
+h1::after {
+    content: url(smiley.gif);
+  }
+a:link {
+    color: pink;
+  }
+  
+  a:visited {
+    color: purple;
+  }
+  
+  a:hover {
+    color: green;
+  }
+  
+  a:active {
+    color: blue;
+  }
+  div > p {
+    background-color: yellow;
+  }
+
+  .padding{
+    padding-left: 10%;
+    padding-top: 5%;
+  }
+
+  .box-model{
+      width: 320px;
+      padding: 10px;
+      border: 5px solid gray;
+      margin: 0;
+  }
+
+  div.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    border: 3px solid #73AD21;
+  }
+
+  img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  h3{
+    padding-top: 10%;
+  }

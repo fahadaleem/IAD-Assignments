@@ -5,8 +5,9 @@ const addNewContactForm = document.querySelector("#add-new-contact-form");
 // all contacts table
 const allContacts = document.querySelector("#all-contacts");
 // all contacts button
-const viewAllContactBtn = document.querySelector("#view-all-contact-btn")
-
+const viewAllContactBtn = document.querySelector("#view-all-contact-btn");
+// form heading
+const formHeading = document.querySelector("#form-heading");
 
 // table body
 const tableBody = document.querySelector("tbody");
@@ -18,7 +19,6 @@ const submitFormBtn = document.querySelector("#submit-btn");
 const inputFields = document.querySelectorAll(".input-fields");
 
 let isEdit = false;
-
 
 // function to generate id
 const handleGenerateID = () => {
@@ -33,40 +33,52 @@ let contacts = localStorage.getItem("contacts")
 // function to delete contact
 const handleDeleteContact = (id) => {
   const contactsAfterDelete = contacts.filter((elem) => elem.id !== id);
+  console.log(contactsAfterDelete);
   document.querySelector(`#delete-${id}`).parentElement.parentElement.remove();
   contacts = contactsAfterDelete;
   localStorage.setItem("contacts", JSON.stringify(contacts));
 };
 
 // function to edit contact
-const handleEditContact = (id)=>{
-    isEdit = true;
-    const contactToBeEdit = contacts.filter(elem=>elem.id===id);
-    const {name, email, phone, address} = contactToBeEdit[0];
+const handleEditContact = (id) => {
+  isEdit = true;
+  const contactToBeEdit = contacts.filter((elem) => elem.id === id);
+  const { name, email, phone, address, id: contactId } = contactToBeEdit[0];
 
-    // set name to the name field
-    inputFields[0].value = name;
+  // set name to the name field
+  inputFields[0].value = name;
 
-    // set email to the email field
-    inputFields[1].value = email;
+  // set email to the email field
+  inputFields[1].value = phone;
 
-    // set phone to the phone field
-    inputFields[2].value = phone;
+  // set phone to the phone field
+  inputFields[2].value = email;
 
-    // set address to the address field
-    inputFields[3].value = address;
+  // set address to the address field
+  inputFields[3].value = address;
 
-    handleDisplayContactForm();
+  // set id to update btn
+  submitFormBtn.setAttribute("id", `update-${contactId}`);
+  handleDisplayContactForm();
+};
 
-}
-
-
+// function to update contact
+const handleUpdateContact = () => {
+  const id = submitFormBtn.getAttribute("id");
+  const getId = parseInt(id.split("-")[1]);
+  const contactDetails = handleTakeInputs(getId);
+  const indexNumb = contacts.findIndex(elem=>elem.id === getId);
+  contacts.splice(indexNumb, 1, contactDetails);
+  localStorage.setItem("contacts", JSON.stringify(contacts));
+  handleRenderContactDetails();
+  handleDisplayContactTables();
+};
 
 // function to take input values from the fields
-const handleTakeInputs = () => {
+const handleTakeInputs = (contactId) => {
   let isError = false;
   let dataObj = {
-    id: handleGenerateID(),
+    id: contactId ? contactId : handleGenerateID(),
   };
   inputFields.forEach((elem) => {
     if (elem.value === "") {
@@ -79,7 +91,6 @@ const handleTakeInputs = () => {
     alert("Fill Out All the Fields");
     return false;
   } else {
-    contacts = [...contacts, dataObj];
     return dataObj;
   }
 };
@@ -87,13 +98,13 @@ const handleTakeInputs = () => {
 // function to submit data
 const handleSubmit = () => {
   const contactDetails = handleTakeInputs();
+  console.log("submit")
 
   if (contactDetails) {
+    contacts = [...contacts, contactDetails];
     handleAppendContact(contactDetails);
     handleDisplayContactTables();
     localStorage.setItem("contacts", JSON.stringify(contacts));
-
-    inputFields.forEach(elem=>elem.value="");
   }
 };
 
@@ -117,6 +128,7 @@ const handleAppendContact = (contactDetail) => {
 
 // function to render the contacts
 const handleRenderContactDetails = () => {
+  tableBody.innerHTML = "";
   contacts.forEach((elem, key) => {
     const html = ` <tr>
         <td scope="row">${elem.id}</td>
@@ -136,23 +148,37 @@ const handleRenderContactDetails = () => {
 
 // function to show add contact form
 const handleDisplayContactForm = () => {
+  if (isEdit) {
+    formHeading.innerHTML = "Edit Contact";
+    submitFormBtn.innerHTML = "Update";
+  }
   addNewContactForm.classList.remove("d-none");
   allContacts.classList.add("d-none");
 };
 
 // function to show contact tables
-const handleDisplayContactTables = ()=>{
-    addNewContactForm.classList.add("d-none");
+const handleDisplayContactTables = () => {
+  isEdit = false;
+  inputFields.forEach((elem) => (elem.value = ""));
+  if (!isEdit) {
+    formHeading.innerHTML = "Add New Contact";
+    submitFormBtn.innerHTML = "Add Contact";
+  }
+  addNewContactForm.classList.add("d-none");
   allContacts.classList.remove("d-none");
-}
-
+};
 
 const init = () => {
   handleRenderContactDetails();
   addNewContactBtn.addEventListener("click", handleDisplayContactForm);
-  submitFormBtn.addEventListener("click", handleSubmit);
+  submitFormBtn.addEventListener("click", () => {
+    if(!isEdit)
+    handleSubmit();
+    if (isEdit) {
+      handleUpdateContact();
+    }
+  });
   viewAllContactBtn.addEventListener("click", handleDisplayContactTables);
 };
 
 init();
-

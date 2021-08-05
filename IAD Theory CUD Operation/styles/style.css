@@ -2,10 +2,10 @@
   font-family: "Arvo", serif;
 }
 
-body, html{
-    scroll-behavior: smooth;
+body,
+html {
+  scroll-behavior: smooth;
 }
-
 
 .navbar {
   background-color: #233e8b !important;
@@ -19,9 +19,9 @@ body, html{
   font-family: "Arvo", serif;
 }
 
-.navbar-collapse{
-    background-color: #233e8b;
-    z-index: 20;
+.navbar-collapse {
+  background-color: #233e8b;
+  z-index: 20;
 }
 
 .navbar-nav > li > a {
@@ -59,29 +59,61 @@ button.btn-primary {
 }
 
 
-
-.form-labels{
-    font-size: 1.2rem;
+#add-new-contact-form{
+  background-color: #233e8b;
+  position: relative;
+  padding: 55px 40px 155px 40px ;
 }
 
-.input-fields{
-    border:2px solid #233e8b !important;
+.custom-shape-divider-bottom-1628150491 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1628150491 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height:150px;
+}
+
+.custom-shape-divider-bottom-1628150491 .shape-fill {
+  fill: #FFFFFF;
 }
 
 
+.form-labels {
+  font-size: 1.2rem;
+}
 
+.input-fields {
+  border: 2px solid #233e8b !important;
+}
+.input-fields:focus {
+  box-shadow: 2px 2px 6px #233e8b !important;
+}
 
-@media screen and (max-width:420px) {
-    .header-content{
-        font-size: 2.6rem;
-        text-align: center;
-        margin: 20px 0;
-    }
-    .table{
-        width: 1000px !important;
-    }
-    .w-50{
-        width:"100% !important"
-    }
-
+@media screen and (max-width: 420px) {
+  .header-content {
+    font-size: 2.6rem;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .table {
+    width: 1000px !important;
+  }
+  .w-50 {
+    width: "100% !important";
+  }
+  #form{
+    width: 100% !important;
+  }
+  #add-new-contact-form{
+    padding: 55px 15px 155px 15px;
+  }
 }
